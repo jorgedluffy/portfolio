@@ -5,14 +5,14 @@ import prettierConfig from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
 
 const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  prettierConfig,
-  {
-    plugins: { prettier: prettierPlugin },
-    rules: { 'prettier/prettier': 'error' },
-  },
-  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
+    ...nextVitals,
+    ...nextTs,
+    prettierConfig,
+    {
+        plugins: { prettier: prettierPlugin },
+        rules: { 'prettier/prettier': 'error' },
+    },
+    globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
 ]);
 
 export default eslintConfig;
