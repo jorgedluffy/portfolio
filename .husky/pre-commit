@@ -1,0 +1,5 @@
+# Runs lint-staged before each commit.
+# lint-staged defined in package.json
+# runs eslint --fix + prettier --write only on staged files.
+# If eslint finds errors it cannot auto-fix, the commit is blocked.
+npx lint-staged
