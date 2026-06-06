@@ -1,10 +1,25 @@
-import { DarkModeToggle } from '../components/ui/DarkModeToggle';
+import Navbar from '../components/ui/Navbar';
+import Hero from '../components/sections/Hero';
+import About from '../components/sections/About';
+import Projects from '../components/sections/Projects';
+import Experience from '../components/sections/Experience';
+import Skills from '../components/sections/Skills';
+import Education from '../components/sections/Education';
+import Contact from '../components/sections/Contact';
 
 export default function Home() {
     return (
-        <main>
-            <DarkModeToggle />
-            <h1>Portfolio</h1>
-        </main>
+        <>
+            <Navbar />
+            <main>
+                <Hero />
+                <About />
+                <Projects />
+                <Experience />
+                <Skills />
+                <Education />
+                <Contact />
+            </main>
+        </>
     );
 }
