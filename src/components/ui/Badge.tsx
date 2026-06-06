@@ -11,8 +11,8 @@ interface BadgeProps {
  */
 export default function Badge({ text }: BadgeProps): JSX.Element {
     return (
-        <div className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-3 py-1 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink shrink-0" />
+        <div className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest text-accent bg-accent/10 border border-accent/25 px-3 py-1 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-blink shrink-0" />
             {text}
         </div>
     );

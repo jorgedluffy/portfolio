@@ -11,7 +11,7 @@ interface ButtonProps {
 const base = 'inline-flex items-center gap-1.5 font-mono px-5 py-2.5 rounded-lg tracking-wide';
 
 const colors = {
-    primary: 'text-black bg-accent hover:opacity-90 active:scale-95 transition-opacity',
+    primary: 'text-surface bg-accent hover:opacity-90 active:scale-95 transition-opacity',
     secondary:
         'border border-border-strong text-muted hover:border-muted hover:text-foreground transition-colors',
 };

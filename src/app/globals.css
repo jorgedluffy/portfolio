@@ -5,22 +5,24 @@
 
 /* Light mode */
 :root {
-    --background: #ffffff;
+    --background: #f7fdf4;
     --foreground: #171717;
-    --muted: #71717a;
-    --border: #e4e4e7;
-    --border-strong: #d4d4d8;
-    --accent: #1b7206;
+    --muted: #4a6644;
+    --border: #aad397;
+    --border-strong: #38a01e4d;
+    --accent: #38a01e;
+    --surface: #e2f0db;
 }
 
 /* Dark mode */
 .dark {
-    --background: #0e0e0f;
+    --background: #0e1512;
     --foreground: #e8e6e1;
     --muted: #888783;
-    --border: rgba(255, 255, 255, 0.07);
-    --border-strong: rgba(255, 255, 255, 0.12);
+    --border: #ffffff12;
+    --border-strong: #ffffff2e;
     --accent: #31d146;
+    --surface: #16201c;
 }
 
 /* Makes the above variables available as Tailwind classes */
@@ -31,6 +33,7 @@
     --color-border: var(--border);
     --color-border-strong: var(--border-strong);
     --color-accent: var(--accent);
+    --color-surface: var(--surface);
     --color-white: #ffffff;
     --color-black: #000000;
     --font-sans: var(--font-dm-sans);
