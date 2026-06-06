@@ -1,25 +1,31 @@
-@import 'tailwindcss';
+﻿@import 'tailwindcss';
 
+/* Activates dark mode via the "dark" class on any ancestor */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Light mode */
 :root {
-    --background: #ffffff;
+    --background: #f7fdf4;
     --foreground: #171717;
-    --muted: #71717a;
-    --border: #e4e4e7;
-    --border-strong: #d4d4d8;
-    --accent: #1b7206;
+    --muted: #4a6644;
+    --border: #aad397;
+    --border-strong: #38a01e4d;
+    --accent: #38a01e;
+    --surface: #e2f0db;
 }
 
+/* Dark mode */
 .dark {
-    --background: #0e0e0f;
+    --background: #0e1512;
     --foreground: #e8e6e1;
     --muted: #888783;
-    --border: rgba(255, 255, 255, 0.07);
-    --border-strong: rgba(255, 255, 255, 0.12);
+    --border: #ffffff12;
+    --border-strong: #ffffff2e;
     --accent: #31d146;
+    --surface: #16201c;
 }
 
+/* Makes the above variables available as Tailwind classes */
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
@@ -27,20 +33,51 @@
     --color-border: var(--border);
     --color-border-strong: var(--border-strong);
     --color-accent: var(--accent);
+    --color-surface: var(--surface);
+    --color-white: #ffffff;
+    --color-black: #000000;
     --font-sans: var(--font-dm-sans);
     --font-mono: var(--font-dm-mono);
+    --animate-fade-up: fadeUp 0.6s ease both;
+    --animate-blink: blink 2s ease infinite;
 }
 
-body {
-    @apply text-sm md:text-lg;
-    background: var(--background);
-    color: var(--muted);
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/* Animations for fading in */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+/* Animations for blinking uses at the status dot in Badge */
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@layer base {
+    body {
+        @apply text-sm md:text-lg;
+        background: var(--background);
+        color: var(--muted);
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Prevents browser default blue on links */
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 }
