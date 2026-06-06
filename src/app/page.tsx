@@ -7,12 +7,13 @@ import Experience from '../components/sections/Experience';
 import Skills from '../components/sections/Skills';
 import Education from '../components/sections/Education';
 import Contact from '../components/sections/Contact';
+import Footer from '../components/ui/Footer';
 
 export default function Home(): JSX.Element {
     return (
         <>
             <Navbar />
-            <main>
+            <main className="flex-1">
                 <Hero />
                 <About />
                 <Projects />
@@ -21,6 +22,7 @@ export default function Home(): JSX.Element {
                 <Education />
                 <Contact />
             </main>
+            <Footer />
         </>
     );
 }

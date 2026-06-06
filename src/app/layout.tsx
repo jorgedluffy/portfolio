@@ -27,7 +27,7 @@ export default function RootLayout({
             suppressHydrationWarning
             className={`scroll-smooth ${dmSans.variable} ${dmMono.variable}`}
         >
-            <body>
+            <body className="flex min-h-screen flex-col">
                 <Providers>{children}</Providers>
             </body>
         </html>
