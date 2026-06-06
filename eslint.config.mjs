@@ -12,6 +12,12 @@ const eslintConfig = defineConfig([
         plugins: { prettier: prettierPlugin },
         rules: { 'prettier/prettier': 'error' },
     },
+    {
+        rules: {
+            '@typescript-eslint/no-explicit-any': 'error',
+            '@typescript-eslint/explicit-module-boundary-types': 'error',
+        },
+    },
     globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
 ]);
 

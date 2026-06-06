@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 import { BsList, BsX } from 'react-icons/bs';
 import { DarkModeToggle } from './DarkModeToggle';
+import type { Link } from '@/types/navigation';
 
-const links = [
+const links: Link[] = [
     { label: 'sobre mí', href: '#about' },
     { label: 'proyectos', href: '#projects' },
     { label: 'experiencia', href: '#experience' },
@@ -13,7 +14,7 @@ const links = [
     { label: 'contacto', href: '#contact' },
 ];
 
-export default function Navbar() {
+export default function Navbar(): JSX.Element {
     const [open, setOpen] = useState(false);
 
     return (

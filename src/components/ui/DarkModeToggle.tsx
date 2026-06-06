@@ -1,9 +1,10 @@
 'use client';
 
+import type { JSX } from 'react';
 import { BsMoon, BsSun } from 'react-icons/bs';
 import { useTheme } from 'next-themes';
 
-export function DarkModeToggle() {
+export function DarkModeToggle(): JSX.Element {
     const { resolvedTheme, setTheme } = useTheme();
 
     return (

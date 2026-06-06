@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import Navbar from '../components/ui/Navbar';
 import Hero from '../components/sections/Hero';
 import About from '../components/sections/About';
@@ -7,7 +8,7 @@ import Skills from '../components/sections/Skills';
 import Education from '../components/sections/Education';
 import Contact from '../components/sections/Contact';
 
-export default function Home() {
+export default function Home(): JSX.Element {
     return (
         <>
             <Navbar />

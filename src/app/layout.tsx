@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { DM_Sans, DM_Mono } from 'next/font/google';
 import './globals.css';
 import Providers from './providers';
@@ -19,7 +20,7 @@ export default function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
-}>) {
+}>): JSX.Element {
     return (
         <html
             lang="es"
