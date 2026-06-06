@@ -4,6 +4,7 @@ interface ButtonProps {
     color: 'primary' | 'secondary';
     children: React.ReactNode;
     href?: string;
+    download?: string | boolean;
     onClick?: React.MouseEventHandler;
 }
 
@@ -21,14 +22,21 @@ const colors = {
  * @param color    - `primary` accent background (green), `secondary` borderless dark outline.
  * @param children - Button content (text, icons…).
  * @param href     - When provided, the component acts as a navigation link.
+ * @param download - When provided alongside `href`, triggers a file download. Pass a string to set the suggested filename.
  * @param onClick  - When provided (and no href), the component acts as an action button.
  */
-export default function Button({ color, children, href, onClick }: ButtonProps): JSX.Element {
+export default function Button({
+    color,
+    children,
+    href,
+    download,
+    onClick,
+}: ButtonProps): JSX.Element {
     const className = `${base} ${colors[color]}`;
 
     if (href !== undefined) {
         return (
-            <a href={href} onClick={onClick} className={className}>
+            <a href={href} download={download} onClick={onClick} className={className}>
                 {children}
             </a>
         );

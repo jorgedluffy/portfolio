@@ -40,7 +40,7 @@ export default function Hero(): JSX.Element {
                     <Button color="primary" href="#projects">
                         ver proyectos <FiArrowRight />
                     </Button>
-                    <Button color="secondary" href="/">
+                    <Button color="secondary" href="/cvJorge.pdf" download="cvJorge.pdf">
                         <FiDownload /> descargar CV
                     </Button>
                 </div>
