@@ -12,9 +12,9 @@ const highlights = [
 
 export default function Hero(): JSX.Element {
     return (
-        <section id="hero" className="py-24 border-b border-border">
-            <div className="max-w-4xl mx-auto px-8 flex flex-col items-center text-center">
-                <h1 className="text-7xl font-light leading-none tracking-tight text-foreground mb-2 animate-fade-up [animation-delay:0.15s]">
+        <section id="hero" className="py-16 md:py-24 border-b border-border">
+            <div className="max-w-4xl mx-auto px-4 sm:px-8 flex flex-col items-center text-center">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-light leading-tight md:leading-none tracking-tight text-foreground mb-2 animate-fade-up [animation-delay:0.15s]">
                     Jorge Sánchez González
                 </h1>
 
@@ -22,7 +22,7 @@ export default function Hero(): JSX.Element {
                     <Badge text="Alicante · disponibilidad inmediata" />
                 </div>
 
-                <h2 className="mt-7 mb-7 text-5xl md:text-6xl font-light leading-none tracking-tight text-foreground  animate-fade-up [animation-delay:0.2s]">
+                <h2 className="mt-7 mb-7 text-3xl sm:text-5xl md:text-6xl font-light leading-tight md:leading-none tracking-tight text-foreground animate-fade-up [animation-delay:0.2s]">
                     <span className="block">Full Stack</span>
                     <span className="block text-accent italic">Junior Dev</span>
                 </h2>
@@ -32,11 +32,11 @@ export default function Hero(): JSX.Element {
                     propios desplegados con React, Node.js y Docker.
                 </p>
 
-                <div className="mb-10 animate-fade-up [animation-delay:0.4s]">
+                <div className="mb-10 w-full animate-fade-up [animation-delay:0.4s]">
                     <HighlightBar highlights={highlights} />
                 </div>
 
-                <div className="flex gap-2.5 animate-fade-up [animation-delay:0.5s]">
+                <div className="flex flex-wrap gap-2.5 justify-center animate-fade-up [animation-delay:0.5s]">
                     <Button color="primary" href="#projects">
                         ver proyectos <FiArrowRight />
                     </Button>

@@ -17,9 +17,9 @@ interface HighlightBarProps {
  */
 export default function HighlightBar({ highlights }: HighlightBarProps): JSX.Element {
     return (
-        <div className="flex border border-border rounded-xl overflow-hidden divide-x divide-border">
+        <div className="flex flex-col sm:flex-row border border-border rounded-xl overflow-hidden divide-y divide-border sm:divide-y-0 sm:divide-x">
             {highlights.map((highlight, index) => (
-                <div key={index} className="px-7 py-4 flex flex-col gap-0.5">
+                <div key={index} className="px-5 sm:px-7 py-4 flex flex-col gap-0.5 flex-1">
                     <span className="text-3xl text-accent leading-none tracking-tight tabular-nums">
                         {highlight.value}
                     </span>
