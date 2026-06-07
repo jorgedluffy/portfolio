@@ -18,14 +18,17 @@ export default function Hero(): JSX.Element {
                     Jorge Sánchez González
                 </h1>
 
-                <div className="mb-7 animate-fade-up [animation-delay:0.1s]">
+                <h2 className="mt-7 text-2xl sm:text-2xl md:text-4xl font-light leading-tight md:leading-none tracking-tight text-foreground animate-fade-up [animation-delay:0.2s]">
+                    Full Stack <span className="text-accent italic">Junior Dev</span>
+                </h2>
+
+                <h3 className="mt-4 text-md sm:text-lg md:text-xl font-light leading-tight md:leading-none tracking-tight text-foreground animate-fade-up [animation-delay:0.2s]">
+                    React · Angular · Node.js · Java
+                </h3>
+
+                <div className="mt-7 mb-7 animate-fade-up [animation-delay:0.1s]">
                     <Badge text="Alicante · disponibilidad inmediata" />
                 </div>
-
-                <h2 className="mt-7 mb-7 text-3xl sm:text-5xl md:text-6xl font-light leading-tight md:leading-none tracking-tight text-foreground animate-fade-up [animation-delay:0.2s]">
-                    <span className="block">Full Stack</span>
-                    <span className="block text-accent italic">Junior Dev</span>
-                </h2>
 
                 <p className="text-muted leading-relaxed mb-10 animate-fade-up [animation-delay:0.3s]">
                     Doble titulación DAM + DAW, experiencia real en Indra y NTT Data, y proyectos
