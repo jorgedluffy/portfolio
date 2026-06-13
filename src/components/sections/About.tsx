@@ -12,9 +12,9 @@ const tags = [
     'remoto',
     'híbrido',
     'presencial',
-    'abierto a movilidad',
     'inglés B1+',
     'coche propio',
+    'abierto a movilidad',
 ];
 
 export default function About(): JSX.Element {
@@ -35,7 +35,7 @@ export default function About(): JSX.Element {
                             ))}
                         </div>
 
-                        <div className="flex flex-wrap gap-1.5">
+                        <div className="flex flex-wrap justify-between gap-1.5">
                             {tags.map((tag) => (
                                 <span
                                     key={tag}
