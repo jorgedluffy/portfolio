@@ -1,19 +1,36 @@
 import type { JSX } from 'react';
 
 interface BadgeProps {
-    text: string;
+    children: React.ReactNode;
+    isAccent?: boolean;
+    showDot?: boolean;
+    className?: string;
 }
 
 /**
- * Small status pill with a blinking dot.
+ * Pill label. Muted by default;
  *
- * @param text - Text displayed inside the pill.
+ * @param isAccent - Switches to accent color scheme.
+ * @param showDot  - Shows a blinking dot (accent color).
  */
-export default function Badge({ text }: BadgeProps): JSX.Element {
+export default function Badge({
+    children,
+    isAccent = false,
+    showDot = false,
+    className = '',
+}: BadgeProps): JSX.Element {
     return (
-        <div className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest text-accent bg-accent/10 border border-accent/25 px-3 py-1 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-blink shrink-0" />
-            {text}
-        </div>
+        <span
+            className={`inline-flex items-center gap-1.5 font-mono rounded-full border text-xs ${
+                isAccent
+                    ? 'text-accent bg-accent/10 border-accent/25 tracking-widest px-3 py-1'
+                    : 'text-muted border-border-strong px-2 py-0.5'
+            } ${className}`}
+        >
+            {showDot && (
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-blink shrink-0" />
+            )}
+            {children}
+        </span>
     );
 }

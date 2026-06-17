@@ -1,6 +1,7 @@
 import type { JSX } from 'react';
 import { FiArrowRight } from 'react-icons/fi';
 import type { Experience } from '../../types/experience';
+import Badge from './Badge';
 
 /**
  * Single entry in the experience timeline.
@@ -31,11 +32,7 @@ export default function ExperienceItem({
                     {company}
                 </span>
                 <span className="font-mono text-xs text-muted/60">{period}</span>
-                {location && (
-                    <span className="ml-auto font-mono text-[10px] px-2 py-0.5 rounded-full border border-border-strong text-muted">
-                        {location}
-                    </span>
-                )}
+                {location && <Badge className="ml-auto">{location}</Badge>}
             </div>
 
             {highlights && (
@@ -55,12 +52,7 @@ export default function ExperienceItem({
             {stack && stack.length > 0 && (
                 <div className="flex flex-wrap gap-1.5">
                     {stack.map((tech) => (
-                        <span
-                            key={tech}
-                            className="font-mono text-[10px] px-2 py-0.5 rounded-full border border-border-strong text-muted"
-                        >
-                            {tech}
-                        </span>
+                        <Badge key={tech}>{tech}</Badge>
                     ))}
                 </div>
             )}
