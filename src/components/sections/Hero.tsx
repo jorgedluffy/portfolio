@@ -27,7 +27,7 @@ export default function Hero(): JSX.Element {
                 </h3>
 
                 <div className="mt-7 mb-7 animate-fade-up [animation-delay:0.1s]">
-                    <Badge isAccent showDot>
+                    <Badge colorScheme="accent" showDot dotAnimated>
                         Alicante · disponibilidad inmediata
                     </Badge>
                 </div>
