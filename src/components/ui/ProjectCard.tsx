@@ -2,6 +2,7 @@ import type { JSX } from 'react';
 import Image from 'next/image';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import type { Project } from '../../types/projects';
+import Badge from './Badge';
 
 export default function ProjectCard({
     title,
@@ -30,12 +31,7 @@ export default function ProjectCard({
 
                 <div className="flex flex-wrap justify-between gap-1.5 mb-4">
                     {stack.map((tech) => (
-                        <span
-                            key={tech}
-                            className="font-mono text-[10px] px-2 py-0.5 rounded-full border border-border-strong text-muted"
-                        >
-                            {tech}
-                        </span>
+                        <Badge key={tech}>{tech}</Badge>
                     ))}
                 </div>
 

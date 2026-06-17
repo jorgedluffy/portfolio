@@ -1,5 +1,6 @@
 import type { JSX } from 'react';
 import Image from 'next/image';
+import Badge from '../ui/Badge';
 
 const paragraphs = [
     'Desarrollador Full Stack Junior con doble titulación en DAM y DAW.',
@@ -37,12 +38,7 @@ export default function About(): JSX.Element {
 
                         <div className="flex flex-wrap justify-between gap-1.5">
                             {tags.map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="font-mono text-xs px-2.5 py-1 rounded-full border border-border-strong text-muted tracking-wide"
-                                >
-                                    {tag}
-                                </span>
+                                <Badge key={tag}>{tag}</Badge>
                             ))}
                         </div>
                     </div>
