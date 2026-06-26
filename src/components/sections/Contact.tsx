@@ -52,25 +52,25 @@ export default function Contact(): JSX.Element {
     return (
         <section id="contact" className="py-16 md:py-24 border-b border-border">
             <div className="max-w-6xl mx-auto px-4 sm:px-8">
-                <div className="flex items-baseline justify-between gap-3 mb-10">
-                    <h2 className="text-xl text-foreground">Contacto</h2>
+                <div className="flex flex-col gap-2 mb-5 md:mb-10 md:flex-row md:items-baseline md:justify-between">
+                    <h2 className="text-xl text-foreground mb-2 md:mb-0">Contacto</h2>
                     <Badge colorScheme="accent" showDot dotAnimated>
                         Café en mano, listo para picar código y charlar sobre nuevos retos.
                     </Badge>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-12 items-start">
                     <div>
-                        <p className="text-sm leading-relaxed text-muted mb-7">
+                        <p className="text-sm leading-relaxed text-justify text-muted mb-7">
                             Estoy buscando activamente nuevas oportunidades. Si crees que puedo
                             encajar en tu equipo, me encantaría saberlo.
                         </p>
-                        <p className="text-sm leading-relaxed text-muted mb-7">
+                        <p className="text-sm leading-relaxed text-justify text-muted mb-7">
                             Puedes escribirme por correo, LinkedIn o directamente desde este
                             formulario.
                         </p>
 
-                        <div className="flex flex-col gap-2.5 mb-5">
+                        <div className="flex flex-col gap-2.5 md:mb-5">
                             <a
                                 href="mailto:lopilo64@gmail.com"
                                 className="flex items-center gap-2.5"
@@ -145,21 +145,21 @@ export default function Contact(): JSX.Element {
                             />
                         </div>
 
-                        <div className="px-2 py-1 flex items-center justify-end gap-3">
+                        <div className="px-2 py-1 flex flex-col gap-2 md:flex-row md:items-center md:justify-end md:gap-3">
                             {success && (
-                                <span className="text-xs text-accent">
+                                <span className="text-xs text-accent my-2 md:my-0 w-full md:w-auto">
                                     Mensaje enviado, ¡gracias!
                                 </span>
                             )}
                             {error && (
-                                <span className="text-xs text-red-500">
+                                <span className="text-xs text-red-500 my-2 md:my-0 w-full md:w-auto">
                                     Algo salió mal. Inténtalo de nuevo.
                                 </span>
                             )}
                             <button
                                 type="submit"
                                 disabled={sending}
-                                className="font-mono text-xs px-5 py-2.5 rounded-lg bg-accent text-surface transition-colors hover:bg-accent/80 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="font-mono text-xs px-5 py-2.5 rounded-lg bg-accent text-surface transition-colors hover:bg-accent/80 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed w-full md:w-auto"
                             >
                                 {sending ? (
                                     'Enviando...'
