@@ -1,9 +1,54 @@
+'use client';
+
+import { useRef, useState } from 'react';
 import type { JSX } from 'react';
+import emailjs from '@emailjs/browser';
 import { MdEmail, MdSend } from 'react-icons/md';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Badge from '../ui/Badge';
 
 export default function Contact(): JSX.Element {
+    const formRef = useRef<HTMLFormElement>(null);
+    const [sending, setSending] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
+
+    async function handleSubmit(e: { preventDefault(): void }) {
+        e.preventDefault();
+        if (!formRef.current) return;
+
+        setSending(true);
+        setSuccess(false);
+        setError(false);
+
+        try {
+            // Send email to the owner
+            await emailjs.sendForm(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+                formRef.current,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+            );
+            setSuccess(true);
+
+            // If the email is sent successfully, try to send a reply email to the user
+            // but if reply email fails, we don't show an error to the user
+            emailjs
+                .sendForm(
+                    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_REPLY_ID!,
+                    formRef.current,
+                    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+                )
+                .catch(() => {});
+            formRef.current.reset();
+        } catch {
+            setError(true);
+        } finally {
+            setSending(false);
+        }
+    }
+
     return (
         <section id="contact" className="py-16 md:py-24 border-b border-border">
             <div className="max-w-6xl mx-auto px-4 sm:px-8">
@@ -62,13 +107,19 @@ export default function Contact(): JSX.Element {
                         </div>
                     </div>
 
-                    <form className="flex flex-col gap-2 p-2 rounded-lg border border-border-strong bg-surface">
+                    <form
+                        ref={formRef}
+                        onSubmit={handleSubmit}
+                        className="flex flex-col gap-2 p-2 rounded-lg border border-border-strong bg-surface"
+                    >
                         <div className="flex flex-col gap-1 px-4 py-3 rounded-lg border border-border bg-background">
                             <label className="text-xs text-muted">Nombre</label>
                             <input
                                 type="text"
+                                name="name"
                                 placeholder="Tu nombre"
-                                className="p-1 text-sm text-foreground placeholder:text-muted/40 w-full"
+                                required
+                                className="p-1 text-sm text-foreground placeholder:text-muted/40 w-full bg-transparent outline-none"
                             />
                         </div>
 
@@ -76,26 +127,47 @@ export default function Contact(): JSX.Element {
                             <label className="text-xs text-muted">Email</label>
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="tu@email.com"
-                                className="p-1 text-sm text-foreground placeholder:text-muted/40 w-full"
+                                required
+                                className="p-1 text-sm text-foreground placeholder:text-muted/40 w-full bg-transparent outline-none"
                             />
                         </div>
 
                         <div className="flex flex-col gap-1 px-4 py-3 rounded-lg border border-border bg-background">
                             <label className="text-xs text-muted">Mensaje</label>
                             <textarea
+                                name="message"
                                 rows={4}
                                 placeholder="Cuéntame sobre la oportunidad..."
-                                className="p-1 text-sm text-foreground placeholder:text-muted/40 resize-none w-full"
+                                required
+                                className="p-1 text-sm text-foreground placeholder:text-muted/40 resize-none w-full bg-transparent outline-none"
                             />
                         </div>
 
-                        <div className="px-2 py-1 flex justify-end">
+                        <div className="px-2 py-1 flex items-center justify-end gap-3">
+                            {success && (
+                                <span className="text-xs text-accent">
+                                    Mensaje enviado, ¡gracias!
+                                </span>
+                            )}
+                            {error && (
+                                <span className="text-xs text-red-500">
+                                    Algo salió mal. Inténtalo de nuevo.
+                                </span>
+                            )}
                             <button
                                 type="submit"
-                                className="font-mono text-xs px-5 py-2.5 rounded-lg bg-accent text-surface transition-colors hover:bg-accent/80 cursor-pointer"
+                                disabled={sending}
+                                className="font-mono text-xs px-5 py-2.5 rounded-lg bg-accent text-surface transition-colors hover:bg-accent/80 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                Enviar mensaje <MdSend className="inline ml-1" />
+                                {sending ? (
+                                    'Enviando...'
+                                ) : (
+                                    <>
+                                        Enviar mensaje <MdSend className="inline ml-1" />
+                                    </>
+                                )}
                             </button>
                         </div>
                     </form>
