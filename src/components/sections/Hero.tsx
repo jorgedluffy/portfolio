@@ -34,7 +34,7 @@ export default function Hero(): JSX.Element {
 
                 <p className="text-muted leading-relaxed mb-10 animate-fade-up [animation-delay:0.3s]">
                     Doble titulación DAM + DAW, experiencia real en Indra y NTT Data, y proyectos
-                    propios desplegados con React, Node.js y Docker.
+                    propios desplegados en Vercel con Angular, React y Node.js.
                 </p>
 
                 <div className="mb-10 w-full animate-fade-up [animation-delay:0.4s]">
