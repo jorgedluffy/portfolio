@@ -8,7 +8,6 @@ import Skills from '../components/sections/Skills';
 import Education from '../components/sections/Education';
 import Contact from '../components/sections/Contact';
 import Footer from '../components/ui/Footer';
-import { FiTool } from 'react-icons/fi';
 
 export default function Home(): JSX.Element {
     return (
