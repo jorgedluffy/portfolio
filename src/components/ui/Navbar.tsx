@@ -10,7 +10,6 @@ const links: Link[] = [
     { label: 'proyectos', href: '#projects' },
     { label: 'experiencia', href: '#experience' },
     { label: 'skills', href: '#skills' },
-    { label: 'formación', href: '#education' },
     { label: 'contacto', href: '#contact' },
 ];
 
