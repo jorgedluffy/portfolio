@@ -5,7 +5,7 @@ import Badge from '../ui/Badge';
 const paragraphs = [
     'Desarrollador Full Stack Junior con doble titulación en DAM y DAW.',
     'Me reconvertí al sector tech en 2022 tras más de una década trabajando en entornos de alta demanda en Madrid y Londres.',
-    'Desde entonces he trabajado en proyectos reales en Indra y NTT Data — migraciones Angular v16 a v21, más de 2.000 tests unitarios con JUnit y Mockito en producción — y desarrollado proyectos propios con React, Node.js, MongoDB y Docker.',
+    'Desde entonces he trabajado en proyectos reales en Indra y NTT Data — migraciones Angular v16 a v21, más de 2.000 tests unitarios con JUnit y Mockito en producción — y desarrollado proyectos propios con Angular, React, Node.js, MongoDB y Docker.',
     'Busco un equipo donde pueda contribuir desde el primer día en frontend y backend, y donde la actitud cuente tanto como la experiencia.',
 ];
 
