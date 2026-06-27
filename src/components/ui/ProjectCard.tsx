@@ -40,7 +40,7 @@ export default function ProjectCard({
                         href={demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 border border-border-strong rounded-md text-muted hover:border-accent hover:text-accent transition-colors"
+                        className="inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1 border border-accent/25 rounded-md text-accent bg-accent/10 tracking-widest hover:bg-accent/20 transition-colors"
                     >
                         <FiExternalLink className="w-3 h-3" />
                         live demo
@@ -49,7 +49,7 @@ export default function ProjectCard({
                         href={githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 border border-border-strong rounded-md text-muted hover:border-accent hover:text-accent transition-colors"
+                        className="inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1 border border-accent/25 rounded-md text-accent bg-accent/10 tracking-widest hover:bg-accent/20 transition-colors"
                     >
                         <FiGithub className="w-3 h-3" />
                         repo
